@@ -1,12 +1,15 @@
 CC := gcc
 CCFLAGS := -g -Wall -O0
 LDFLAGS := -lm
+SRC_DIR := ~/code/cpp/CProject/src
+BUILD_DIR := build
 
-all: src/*
-	@$(CC) $(CCFLAGS) src/* $(LDFLAGS) -o ./build/app
 
-test: all 
-	@./build/app
+all: $(SRC_DIR)/*
+	@$(CC) $(CCFLAGS) $(SRC_DIR)/* $(LDFLAGS) -o $(BUILD_DIR)/bin/app
 
-.PHONY: all test
+test: all
+	@./$(BUILD_DIR)/bin/app
+
+.PHONY: all asm test
 	
