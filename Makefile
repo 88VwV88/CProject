@@ -1,5 +1,5 @@
 CC := gcc
-CCFLAGS := -g -Wall -O2
+CCFLAGS := -g -Wall -O0
 LDFLAGS := -lm
 
 all: src/*
