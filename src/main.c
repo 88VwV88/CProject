@@ -2,10 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-inline void printMatrix(int, int, int (*)[]);
-inline void addMatrix(int, int, int (*)[], int (*)[], int (*)[]);
-
 int main() {
+    inline void printMatrix(int, int, int (*)[]);
+    inline void addMatrix(int, int, int (*)[], int (*)[], int (*)[]);
     srand(time(NULL));
     int n=3, A[n][n], B[n][n], C[n][n];
     for (int i=0; i<n; ++i)
@@ -19,7 +18,7 @@ int main() {
     printMatrix(n, n, B);
     addMatrix(n, n, A, B, C);
     printf("\nC: \n");
-    printMatrix(C, n, n);
+    printMatrix(n, n, C);
 
     return 0;
 }
@@ -28,7 +27,7 @@ void printMatrix(int n, int m, int *A[m]) {
     int i, j;
     for (i=0; i<n; ++i) {
         for (j=0; j<m; ++j)
-            printf("%d ", A[i+m*j]);
+            printf("%d ", A[i][j]);
         printf("\n");
     }
 }
