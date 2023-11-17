@@ -6,7 +6,7 @@ BUILD_DIR := build
 
 
 all: $(SRC_DIR)/*
-	@$(CC) $(CCFLAGS) $(SRC_DIR)/* $(LDFLAGS) -o $(BUILD_DIR)/bin/app
+	@$(CC) $(CCFLAGS) $(SRC_DIR)/*.c $(LDFLAGS) -o $(BUILD_DIR)/bin/app
 
 test: all
 	@./$(BUILD_DIR)/bin/app
